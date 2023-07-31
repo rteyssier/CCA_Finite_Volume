@@ -25,7 +25,7 @@ The simplest option to connect to the `rusty` supercomputing cluster is using th
 
 You will see the following prompt:
 
-		(yourlohin@gateway.flatironinstitute.org) Verification code:
+		(yourlogin@gateway.flatironinstitute.org) Verification code:
 
 Use Google authentificator to enter the correct code. You will then see another prompt:
 
@@ -62,7 +62,6 @@ In order to see what software packages are available on `rusty`, type:
 You will see a long list of software like:
 
 ```
-
 ------------------------------------------------------------------------------------------- Global Aliases -------------------------------------------------------------------------------------------
    Blast       -> blast-plus/2.13.0       lib/arpack -> arpack-ng/3.8.0    lib/gmp     -> gmp/6.2.1       lib/mpfr     -> mpfr/3.1.6                  nvidia/nvhpc -> nvhpc/23.1
    amd/aocc    -> aocc/4.0.0              lib/boost  -> boost/1.80.0       lib/gsl     -> gsl/2.7.1       lib/netcdf   -> netcdf-c/4.9.0              openmpi4     -> openmpi/4.0.7
@@ -116,7 +115,7 @@ You will see a long list of software like:
 ```
 In order to see the list of packages already installed in your environment, type:
 
-		[rteyssier@rusty2 ~]$ module list
+		module list
 		Currently Loaded Modules:
   		1) modules/2.1.1-20230405 (S)   2) slurm (S)   3) openblas/threaded-0.3.21 (S)
 

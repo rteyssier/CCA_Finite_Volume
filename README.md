@@ -6,5 +6,3 @@ August 2023
 Romain Teyssier
 
 Princeton University
-
-

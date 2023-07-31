@@ -1,8 +1,8 @@
 # Running a parallel job on `adroit`
 
-We now describe how to run a parallel job on the `adroit` cluster. First we need to compile our code using the MPI library. For this, go back in the `ramses/bin` directory and type:
+We now describe how to run a parallel job on the `rusty` cluster. First we need to compile our code using the MPI library. For this, go back in the `ramses/bin` directory and type:
 ```
-module load openmpi/gcc/4.1.0
+module load openmpi4
 make clean
 make NDIM=2 MPI=1
 ```
@@ -19,7 +19,7 @@ First, type in the Terminal window:
 ```
 ./utils/f90/amr2map -inp output_00002 -out dens.map -typ 1
 ```
-This produces a map stored in the binary file `dens.map`. Then type (you need `anaconda` to be properly loaded for this):
+This produces a map stored in the binary file `dens.map`. Then type (you need `python3` to be properly loaded for this):
 ```
 ./utils/py/map2img.py dens.map --log --out dens.png
 ```
@@ -27,14 +27,14 @@ This produces the following `dens.png` image of the density field at the final t
 
 ![density](dens.png)
 
-We will now learn out to submit a job to the job queue on `adroit`. First thing is to write a job script. Edit a file called `job.sh` with the following text inside:
+We will now learn out to submit a job to the job queue on `rusty`. First thing is to write a job script. Edit a file called `job.sh` with the following text inside:
 ```
 #!/bin/bash -l
 #SBATCH --job-name=sedov2d
 #SBATCH --time=00:01:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=8
-module load openmpi/gcc/4.1.0
+module load openmpi4
 export DATE=`date +%F_%Hh%M`
 cd ~/ramses
 srun bin/ramses2d namelist/sedov2d.nml > run_$DATE.log

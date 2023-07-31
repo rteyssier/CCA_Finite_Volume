@@ -8,7 +8,7 @@ Once it is done, visit the BitBucket page of the `RAMSES` code [here](https://bi
 
 You can see among other things the source code, a Wiki that contains the user's guide and an automatic test page. 
 
-Go to your Terminal window on `adroit` and type:
+Go to your Terminal window on `rusty` and type:
 
  ```console
 git clone https://bitbucket.org/rteyssie/ramses

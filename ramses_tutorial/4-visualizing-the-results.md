@@ -74,34 +74,9 @@ If you see the same output, you are good. If not, then something went wrong in t
 
 We will now try and visualize the results using a nice plotting routine.
 
-First we try with `python`. For this, you can use two options to launch a `jupyter notebook`.
+First we try with `python`. For this, you can follow the instructions [here](https://wiki.flatironinstitute.org/SCC/JupyterHub) on how to launch a `jupyter notebook` on a `rusty` compute node.
 
-- use again [myadroit](https://myadroit.princeton.edu), selecting this time the option **Jupyter Notebook**.
-- use a more complex but more powerful technique based on a SSH tunnel from one of `adroit` compute nodes. In the Terminal window on `adroit` type:
-```
-salloc -n 1 -t 01:00:00
-```
-It should reply this"
-```
-salloc: Granted job allocation 1776094
-salloc: Waiting for resource configuration
-salloc: Nodes adroit-h11n6 are ready for job
-```
-You are in the compute node for one hour. Now type in the same Terminal window:
-
-```
-module load anaconda3/2021.5
-jupyter-notebook --no-browser --port=1234 --ip=0.0.0.0
-```
-Open a Terminal window **on your laptop** and type:
-```
-ssh -N -f -L 1234:adroit-h11n6:1234 your_login_name@adroit.princeton.edu
-```
-The Terminal window on `adroit` must have produced some text output. Copy the last line Web address to your Web browser. It should look like this one:
-```
-http://127.0.0.1:1234/?token=9590a9d7cb1d618e9f0b8cb4cfe5f588fd8f997dd9b90c69
-```
-It should open a Jupyter Notebook on `adroit`. In this Jupyter Notebook, type the following cells:
+Once you have opened a Jupyter Notebook on `rusty`, type the following cells:
 ```
 import numpy as np
 import matplotlib.pyplot as plt
@@ -121,9 +96,9 @@ plt.plot(data["x"],data["d"])
 ```
 ![image][profile1.png]
 
-You should see the density profile of this famous 1D test called Sod's test. Note that you may have to import the following packages for this example to work: `numpy`, `matplotlib` and `astropy`. 
+You should see the density profile of this famous 1D test called Sod's test. Note that you may have to import beforehand the following packages for this example to work: `numpy`, `matplotlib` and `astropy`. 
 
-We can do the same using the `gnuplot` package directly within the Linux operating system. For this, type in the Terminal window on `adroit`:
+We can do the same using the `gnuplot` package directly within the Linux operating system. For this, type in the Terminal window on `rusty`:
 ```
 gnuplot
 ```
